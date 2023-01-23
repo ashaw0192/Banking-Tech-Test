@@ -13,13 +13,22 @@ class BankModel {
   }
 
   deposit(amount) {
-    let date = new Date();
     this.balance += amount;
-    this.transactionList.push({
-      date: `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`,
-      debit: amount,
-      balance: this.balance,
-    });
+    this.formatTransactionList('debit', amount)
+  }
+
+  withdraw(amount) {
+    this.balance -= amount;
+    this.formatTransactionList('credit', amount)
+  }
+
+  formatTransactionList(type, amount) {
+    let date = new Date();
+    let transactionObj ={}
+    transactionObj["date"] = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
+    transactionObj[type] = amount;
+    transactionObj["balance"] = this.balance;
+    this.transactionList.push(transactionObj);
   }
 }
 
