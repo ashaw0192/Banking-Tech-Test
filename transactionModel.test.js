@@ -1,6 +1,6 @@
 const TransactionModel = require(`./transactionModel`);
 
-describe("BankModel", () => {
+describe("TransactionModel", () => {
   it("returns a balance of 0", () => {
     const model = new TransactionModel();
 
@@ -15,19 +15,20 @@ describe("BankModel", () => {
 
   it("returns a balance of 100.00 when 100.00 is deposited", () => {
     const model = new TransactionModel();
-    model.deposit(100.0);
+    const mockDate = "23/01/2023"
+    model.deposit(100.0, mockDate);
 
     expect(model.getBalance()).toEqual(100.0);
   });
 
   it("reflects in the transaction list when deposit made", () => {
     const model = new TransactionModel();
-    model.deposit(100.0);
-    let date = model.date.formatDate();
+    const mockDate = "23/01/2023"
+    model.deposit(100.0, mockDate);
 
     expect(model.getTransactions()).toEqual([
       {
-        date: date,
+        date: mockDate,
         debit: 100.0,
         balance: 100.0,
       },
@@ -36,18 +37,19 @@ describe("BankModel", () => {
 
   it("reflects in the transaction list when multiple deposits made", () => {
     const model = new TransactionModel();
-    model.deposit(100.05);
-    model.deposit(50.5);
-    let date = model.date.formatDate();
+    const mockDate1 = "22/01/2023"
+    model.deposit(100.05, mockDate1);
+    const mockDate2 = "23/01/2023"
+    model.deposit(50.5, mockDate2);
 
     expect(model.getTransactions()).toEqual([
       {
-        date: date,
+        date: mockDate1,
         debit: 100.05,
         balance: 100.05,
       },
       {
-        date: date,
+        date: mockDate2,
         debit: 50.5,
         balance: 150.55,
       },
@@ -63,12 +65,12 @@ describe("BankModel", () => {
 
   it("reflects in transaction list when withdrawal made", () => {
     const model = new TransactionModel();
-    model.withdraw(100.0);
-    let date = model.date.formatDate();
+    const mockDate = "23/01/2023"
+    model.withdraw(100.0, mockDate);
 
     expect(model.getTransactions()).toEqual([
       {
-        date: date,
+        date: mockDate,
         credit: 100.0,
         balance: -100.0,
       },
@@ -77,30 +79,33 @@ describe("BankModel", () => {
 
   it("reflects in the transaction list with multiple deposit/withdrawal", () => {
     const model = new TransactionModel();
-    model.deposit(50.0);
-    model.withdraw(45.0);
-    model.deposit(40.0);
-    model.withdraw(5.55);
-    let date = model.date.formatDate();
+    const mockDate1 = "01/01/2021"
+    model.deposit(50.0, mockDate1);
+    const mockDate2 = "02/02/2022"
+    model.withdraw(45.0, mockDate2);
+    const mockDate3 = "03/03/2023"
+    model.deposit(40.0, mockDate3);
+    const mockDate4 = "04/04/2024"
+    model.withdraw(5.55, mockDate4);
 
     expect(model.getTransactions()).toEqual([
       {
-        date: date,
+        date: mockDate1,
         debit: 50.0,
         balance: 50.0,
       },
       {
-        date: date,
+        date: mockDate2,
         credit: 45.0,
         balance: 5.0,
       },
       {
-        date: date,
+        date: mockDate3,
         debit: 40.0,
         balance: 45.0,
       },
       {
-        date: date,
+        date: mockDate4,
         credit: 5.55,
         balance: 39.45,
       },

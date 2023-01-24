@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1674575500820" clover="3.2.0">
-  <project timestamp="1674575500820" name="All files">
+<coverage generated="1674576260741" clover="3.2.0">
+  <project timestamp="1674576260741" name="All files">
     <metrics statements="29" coveredstatements="29" conditionals="6" coveredconditionals="6" methods="12" coveredmethods="12" elements="47" coveredelements="47" complexity="0" loc="29" ncloc="29" packages="1" files="3" classes="3"/>
     <file name="dateFormatModel.js" path="/Users/anthonyshaw/Projects_Javascript/techTests/bankingApp/dateFormatModel.js">
       <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>

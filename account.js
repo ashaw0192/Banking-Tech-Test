@@ -1,10 +1,12 @@
 const TransactionModel = require(`./transactionModel`);
 const StatementModel = require(`./statementModel`);
+const DateFormat = require(`./dateFormatModel`)
 
 class Account {
   constructor() {
     this.transactionModel = new TransactionModel();
     this.statementModel = new StatementModel();
+    this.dateFormat = new DateFormat();
   }
 
   deposit(amount) {
