@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1674580103751" clover="3.2.0">
-  <project timestamp="1674580103751" name="All files">
-    <metrics statements="37" coveredstatements="37" conditionals="6" coveredconditionals="6" methods="16" coveredmethods="16" elements="59" coveredelements="59" complexity="0" loc="37" ncloc="37" packages="2" files="4" classes="4"/>
+<coverage generated="1674586230788" clover="3.2.0">
+  <project timestamp="1674586230788" name="All files">
+    <metrics statements="44" coveredstatements="44" conditionals="6" coveredconditionals="6" methods="20" coveredmethods="20" elements="70" coveredelements="70" complexity="0" loc="44" ncloc="44" packages="2" files="4" classes="4"/>
     <package name="bankingApp">
       <metrics statements="10" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
       <file name="account.js" path="/Users/anthonyshaw/Projects_Javascript/techTests/bankingApp/account.js">
@@ -15,45 +15,52 @@
         <line num="13" count="3" type="stmt"/>
         <line num="17" count="1" type="stmt"/>
         <line num="21" count="1" type="stmt"/>
-        <line num="26" count="1" type="stmt"/>
+        <line num="27" count="1" type="stmt"/>
       </file>
     </package>
     <package name="bankingApp.models">
-      <metrics statements="27" coveredstatements="27" conditionals="6" coveredconditionals="6" methods="12" coveredmethods="12"/>
+      <metrics statements="34" coveredstatements="34" conditionals="6" coveredconditionals="6" methods="16" coveredmethods="16"/>
       <file name="dateFormatModel.js" path="/Users/anthonyshaw/Projects_Javascript/techTests/bankingApp/models/dateFormatModel.js">
-        <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
         <line num="7" count="1" type="stmt"/>
         <line num="8" count="1" type="stmt"/>
-        <line num="9" count="1" type="stmt"/>
-        <line num="10" count="1" type="stmt"/>
-        <line num="11" count="1" type="stmt"/>
-        <line num="15" count="2" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
       </file>
       <file name="statementModel.js" path="/Users/anthonyshaw/Projects_Javascript/techTests/bankingApp/models/statementModel.js">
-        <metrics statements="5" coveredstatements="5" conditionals="6" coveredconditionals="6" methods="3" coveredmethods="3"/>
-        <line num="3" count="9" type="stmt"/>
-        <line num="7" count="5" type="stmt"/>
-        <line num="8" count="5" type="cond" truecount="2" falsecount="0"/>
-        <line num="13" count="4" type="stmt"/>
-        <line num="28" count="2" type="stmt"/>
+        <metrics statements="12" coveredstatements="12" conditionals="6" coveredconditionals="6" methods="8" coveredmethods="8"/>
+        <line num="3" count="6" type="stmt"/>
+        <line num="7" count="9" type="stmt"/>
+        <line num="11" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="17" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="23" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="24" count="2" type="stmt"/>
+        <line num="26" count="3" type="stmt"/>
+        <line num="31" count="3" type="stmt"/>
+        <line num="32" count="4" type="stmt"/>
+        <line num="43" count="5" type="stmt"/>
+        <line num="44" count="5" type="stmt"/>
+        <line num="48" count="2" type="stmt"/>
       </file>
       <file name="transactionModel.js" path="/Users/anthonyshaw/Projects_Javascript/techTests/bankingApp/models/transactionModel.js">
         <metrics statements="15" coveredstatements="15" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="7"/>
-        <line num="3" count="8" type="stmt"/>
-        <line num="4" count="8" type="stmt"/>
-        <line num="8" count="13" type="stmt"/>
-        <line num="12" count="5" type="stmt"/>
-        <line num="16" count="6" type="stmt"/>
-        <line num="17" count="6" type="stmt"/>
+        <line num="3" count="9" type="stmt"/>
+        <line num="4" count="9" type="stmt"/>
+        <line num="8" count="14" type="stmt"/>
+        <line num="12" count="6" type="stmt"/>
+        <line num="16" count="7" type="stmt"/>
+        <line num="17" count="7" type="stmt"/>
         <line num="21" count="4" type="stmt"/>
         <line num="22" count="4" type="stmt"/>
-        <line num="26" count="10" type="stmt"/>
-        <line num="27" count="10" type="stmt"/>
-        <line num="28" count="10" type="stmt"/>
-        <line num="29" count="10" type="stmt"/>
-        <line num="30" count="10" type="stmt"/>
-        <line num="34" count="23" type="stmt"/>
+        <line num="26" count="11" type="stmt"/>
+        <line num="27" count="11" type="stmt"/>
+        <line num="28" count="11" type="stmt"/>
+        <line num="29" count="11" type="stmt"/>
+        <line num="30" count="11" type="stmt"/>
+        <line num="34" count="22" type="stmt"/>
         <line num="38" count="2" type="stmt"/>
       </file>
     </package>

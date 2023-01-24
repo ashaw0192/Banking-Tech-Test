@@ -6,10 +6,10 @@
 
   - (date model)
     [formats the date] >>>>>>>>>> (account controller)
-                                  [takes user input and 
-                                  sends it to models,
+    [takes user input and
+    sends it to models,
     (transaction model) >>>>>>>>> dispaying return]
-    [keeps track of 
+    [keeps track of
     transactions to feed
     to user]
 
@@ -30,21 +30,24 @@
 - Follow this checklist for Installation, testing, and using the program (the checklist assumes you have NVM installed):
 
   - setup
+
   1. clone the app repository onto your machine, and navigate to the bankingApp folder
   2. ~nvm use node //setup node environment
   3. ~npm install //installs dependencies including jest
-  
+
   - testing
+
   1. ~jest //from bankingApp will run complete test suite
   2. ~jest --coverage //to view coverage stats
   3. navigate to different folders for unit tests, or call the path after the jest command
 
   - using the program
+
   1. ~node //from bankingApp folder
-  2. >const Account = require(`./account`); 
-  3. >const account = new Account();
-  4. >account.deposit(amount); // deposits an amount into your account
-  5. >account.withdraw(amount); // withdraws an amount from your account
-  6. >account.statement(); // view a printout of your statement
+  2. > const Account = require(`./account`);
+  3. > const account = new Account();
+  4. > account.deposit(amount); // deposits an amount into your account
+  5. > account.withdraw(amount); // withdraws an amount from your account
+  6. > account.statement(); // view a printout of your statement
 
 Have Fun!
