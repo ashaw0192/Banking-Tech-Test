@@ -29,12 +29,10 @@ class StatementModel {
 
   transactionPrinter(transactionList) {
     transactionList.reverse().forEach((transaction) => {
-      console.log(
-        `${transaction.date} || ${this.debitFormat(
-          transaction
-        )} || ${this.creditFormat(transaction)} || ${this.poundsPence(
-          transaction.balance
-        )}`
+      console.log(`${transaction.date} || ${
+            this.debitFormat(transaction)} || ${
+              this.creditFormat(transaction)} || ${
+                this.poundsPence(transaction.balance)}`
       );
     });
   }
