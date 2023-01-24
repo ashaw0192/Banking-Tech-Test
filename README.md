@@ -17,19 +17,21 @@
 
 - I decided in planning not to vet for amounts that weren't integers, as I assumed this was beyond the scope of what I was building, I also decided to allow fractional pennies in case of currency conversion, but rounded it in the display
 
-- In retrospect, I'm not sure whether the user would have wanted to input their own date for the transactions, what I have implemented is a program that formats a timestamp created when a transaction is fed to the program, which feels closer to how a banking app would actually work.
+- In retrospect, I'm not sure whether the user would have wanted to input their own date for the transactions; what I have implemented is a program that formats a timestamp created when a transaction is fed to the program, which feels closer to how a banking app would actually work.
 
 - Secondarily, the transaction model is maybe a little burdened with responsibilty, but I think it works as a model that "keeps track of transactions"
 
-- For reusability, I attempted to make the models completely self contained, not requiring colaborators, and fed the necessary input via the account controller
+- Finally there is potentially some refactoring to combine the deposit/withdraw functions, but it would have involved rewriting all my tests so I opted for timely completion
+
+- For reusability, I attempted to make the models completely self contained, not requiring colaborators, and fed the necessary input via the account controller, which itself doesn't attempt any logic
 
 2. INSTALLATION
 
 - Follow this checklist for Installation, testing, and using the program (the checklist assumes you have NVM installed):
 
   - setup
-  1. ~nvm use node //setup node environment
-  2. clone the app repository onto your machine, and navigate to the bankingApp folder
+  1. clone the app repository onto your machine, and navigate to the bankingApp folder
+  2. ~nvm use node //setup node environment
   3. ~npm install //installs dependencies including jest
   
   - testing
