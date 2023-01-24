@@ -1,4 +1,4 @@
-class DateFormat {
+class DateFormatModel {
   constructor() {
     this.date = new Date();
   }
@@ -12,4 +12,4 @@ class DateFormat {
   }
 }
 
-module.exports = DateFormat;
+module.exports = DateFormatModel;

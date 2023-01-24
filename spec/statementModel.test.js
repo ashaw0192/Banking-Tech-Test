@@ -1,4 +1,4 @@
-const StatementModel = require(`./statementModel`);
+const StatementModel = require(`../models/statementModel`);
 
 describe("StatementModel", () => {
   let logSpy = jest.spyOn(console, "log");

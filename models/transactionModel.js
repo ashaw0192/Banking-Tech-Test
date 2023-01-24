@@ -5,7 +5,7 @@ class TransactionModel {
   }
 
   getBalance() {
-    return this.round(this.balance);
+    return this.balance;
   }
 
   getTransactions() {
@@ -25,8 +25,8 @@ class TransactionModel {
   formatTransactionList(transactionType, amount, date) {
     let transactionObj = {};
     transactionObj["date"] = date;
-    transactionObj[transactionType] = amount;
-    transactionObj["balance"] = this.getBalance();
+    transactionObj[transactionType] = this.round(amount);
+    transactionObj["balance"] = this.round(this.getBalance());
     this.transactionList.push(transactionObj);
   }
 

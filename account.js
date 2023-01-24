@@ -1,26 +1,27 @@
-const TransactionModel = require(`./transactionModel`);
-const StatementModel = require(`./statementModel`);
-const DateFormat = require(`./dateFormatModel`)
+const TransactionModel = require(`./models/transactionModel`);
+const StatementModel = require(`./models/statementModel`);
+const DateFormatModel = require(`./models/dateFormatModel`);
 
 class Account {
   constructor() {
     this.transactionModel = new TransactionModel();
     this.statementModel = new StatementModel();
-    this.dateFormat = new DateFormat();
+    this.dateFormatModel = new DateFormatModel();
   }
 
   deposit(amount) {
-    this.transactionModel.deposit(amount);
+    this.transactionModel.deposit(amount, this.dateFormatModel.formatDate());
   }
 
   withdraw(amount) {
-    this.transactionModel.withdraw(amount);
+    this.transactionModel.withdraw(amount, this.dateFormatModel.formatDate());
   }
 
   statement() {
-    this.statementModel.formatStatement(this.transactionModel.getTransactions());
+    this.statementModel.formatStatement(
+      this.transactionModel.getTransactions()
+    );
   }
-       
 }
 
 module.exports = Account;
