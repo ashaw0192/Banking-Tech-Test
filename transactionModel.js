@@ -1,7 +1,10 @@
-class BankModel {
+const DateFormat = require(`./dateFormatModel`)
+
+class TransactionModel {
   constructor() {
     this.balance = 0.0;
     this.transactionList = [];
+    this.date = new DateFormat();
   }
 
   getBalance() {
@@ -24,19 +27,11 @@ class BankModel {
 
   formatTransactionList(transactionType, amount) {
     let transactionObj = {};
-    transactionObj["date"] = this.formatDate();
+    transactionObj["date"] = this.date.formatDate();
     transactionObj[transactionType] = amount;
     transactionObj["balance"] = this.balance;
     this.transactionList.push(transactionObj);
   }
-
-  formatDate() {
-    let date = new Date();
-    const day = ("0" + date.getDate()).slice(-2);
-    const month = ("0" + (date.getMonth() + 1)).slice(-2);
-    const year = date.getFullYear();
-    return `${day}/${month}/${year}`;
-  }
 }
 
-module.exports = BankModel;
+module.exports = TransactionModel;
