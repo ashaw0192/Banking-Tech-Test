@@ -1,4 +1,4 @@
-const DateFormat = require(`./dateFormatModel`)
+const DateFormat = require(`./dateFormatModel`);
 
 describe("DateFormatter", () => {
   it("returns a formatted date", () => {
@@ -7,8 +7,8 @@ describe("DateFormatter", () => {
     const day = ("0" + date.getDate()).slice(-2);
     const month = ("0" + (date.getMonth() + 1)).slice(-2);
     const year = date.getFullYear();
-    const formattedDate = `${day}/${month}/${year}`
+    const formattedDate = `${day}/${month}/${year}`;
 
     expect(dateFormat.formatDate()).toEqual(formattedDate);
-  })
-})
+  });
+});

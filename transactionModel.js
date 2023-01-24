@@ -1,4 +1,4 @@
-const DateFormat = require(`./dateFormatModel`)
+const DateFormat = require(`./dateFormatModel`);
 
 class TransactionModel {
   constructor() {
@@ -8,7 +8,7 @@ class TransactionModel {
   }
 
   getBalance() {
-    return this.balance;
+    return this.round(this.balance);
   }
 
   getTransactions() {
@@ -29,8 +29,12 @@ class TransactionModel {
     let transactionObj = {};
     transactionObj["date"] = this.date.formatDate();
     transactionObj[transactionType] = amount;
-    transactionObj["balance"] = this.balance;
+    transactionObj["balance"] = this.getBalance();
     this.transactionList.push(transactionObj);
+  }
+
+  round(amount) {
+    return parseFloat(amount.toFixed(2));
   }
 }
 

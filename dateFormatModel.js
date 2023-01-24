@@ -1,5 +1,5 @@
 class DateFormat {
-  constructor () {
+  constructor() {
     this.date = new Date();
   }
 
