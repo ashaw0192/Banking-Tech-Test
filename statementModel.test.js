@@ -16,16 +16,16 @@ describe("StatementModel", () => {
     const model = new StatementModel();
     let logSpy = jest.spyOn(console, "log");
     const mockTransactions = [];
-    model.statement(mockTransactions);
+    model.formatStatement(mockTransactions);
 
-    expect(logSpy).toHaveBeenCalledWith("date || credit || debit || balance");
+    expect(logSpy).toHaveBeenCalledWith("date || debit || credit || balance");
   });
 
   it("only returns balance 0.00 if not transactions made", () => {
     const model = new StatementModel();
     let logSpy = jest.spyOn(console, "log");
     const mockTransactions = [];
-    model.statement(mockTransactions);
+    model.formatStatement(mockTransactions);
 
     expect(logSpy).toHaveBeenCalledWith("  ||  ||  || balance: 0.00");
   });
@@ -34,7 +34,7 @@ describe("StatementModel", () => {
     const model = new StatementModel();
     let logSpy = jest.spyOn(console, "log");
     const mockTransactions = [{ date: "23/01/23", debit: 10.0, balance: 10.0 }];
-    model.statement(mockTransactions);
+    model.formatStatement(mockTransactions);
 
     expect(logSpy).toHaveBeenCalledWith("23/01/23 || 10.00 ||  || 10.00");
   });
@@ -45,7 +45,7 @@ describe("StatementModel", () => {
     const mockTransactions = [
       { date: "23/01/23", credit: 10.0, balance: 10.0 },
     ];
-    model.statement(mockTransactions);
+    model.formatStatement(mockTransactions);
 
     expect(logSpy).toHaveBeenCalledWith("23/01/23 ||  || 10.00 || 10.00");
   });
@@ -57,10 +57,10 @@ describe("StatementModel", () => {
       { date: "10/01/23", credit: 10.0, balance: -10.0 },
       { date: "23/01/23", debit: 10.0, balance: 0.0 },
     ];
-    model.statement(mockTransactions);
+    model.formatStatement(mockTransactions);
     console.log(logSpy.mock.calls[-1]);
     expect(logSpy.mock.calls).toContainEqual(
-      ["date || credit || debit || balance"],
+      ["date || debit || credit || balance"],
       ["23/01/23 || 10.00 ||  || 0.00"],
       ["10/01/23 ||  || 10.00 || -10.00"]
     );

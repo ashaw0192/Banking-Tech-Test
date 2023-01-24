@@ -1,41 +1,24 @@
 const TransactionModel = require(`./transactionModel`);
+const StatementModel = require(`./statementModel`);
 
 class Account {
   constructor() {
-    this.transaction = new TransactionModel();
+    this.transactionModel = new TransactionModel();
+    this.statementModel = new StatementModel();
   }
 
   deposit(amount) {
-    this.transaction.deposit(amount);
+    this.transactionModel.deposit(amount);
   }
 
   withdraw(amount) {
-    this.transaction.withdraw(amount);
-  }
-
-  poundsPence(amount) {
-    return (Math.round(amount * 100) / 100).toFixed(2);
+    this.transactionModel.withdraw(amount);
   }
 
   statement() {
-    console.log("date || credit || debit || balance");
-    this.transaction
-      .getTransactions()
-      .reverse()
-      .forEach((transaction) =>
-        console.log(
-          `${transaction.date} || ${
-            transaction.debit === undefined
-              ? ""
-              : this.poundsPence(transaction.debit)
-          } || ${
-            transaction.credit === undefined
-              ? ""
-              : this.poundsPence(transaction.credit)
-          } || ${this.poundsPence(transaction.balance)}`
-        )
-      );
+    this.statementModel.formatStatement(this.transactionModel.getTransactions());
   }
+       
 }
 
 module.exports = Account;

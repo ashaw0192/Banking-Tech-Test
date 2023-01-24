@@ -3,8 +3,8 @@ class StatementModel {
     return (Math.round(amount * 100) / 100).toFixed(2);
   }
 
-  statement(transactionList) {
-    console.log("date || credit || debit || balance");
+  formatStatement(transactionList) {
+    console.log("date || debit || credit || balance");
     transactionList.length === 0
       ? console.log("  ||  ||  || balance: 0.00")
       : transactionList
