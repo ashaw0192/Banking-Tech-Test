@@ -1,24 +1,10 @@
 const TransactionModel = require(`../models/transactionModel`);
 
 describe("TransactionModel", () => {
-  it("returns a balance of 0", () => {
-    const model = new TransactionModel();
-
-    expect(model.getBalance()).toEqual(0);
-  });
-
   it("returns an empty transaction list", () => {
     const model = new TransactionModel();
 
     expect(model.getTransactions()).toEqual([]);
-  });
-
-  it("returns a balance of 100.00 when 100.00 is deposited", () => {
-    const model = new TransactionModel();
-    const mockDate = "23/01/2023";
-    model.deposit(100.0, mockDate);
-
-    expect(model.getBalance()).toEqual(100.0);
   });
 
   it("reflects in the transaction list when deposit made", () => {
@@ -30,7 +16,6 @@ describe("TransactionModel", () => {
       {
         date: mockDate,
         debit: 100.0,
-        balance: 100.0,
       },
     ]);
   });
@@ -46,21 +31,12 @@ describe("TransactionModel", () => {
       {
         date: mockDate1,
         debit: 100.05,
-        balance: 100.05,
       },
       {
         date: mockDate2,
         debit: 50.5,
-        balance: 150.55,
       },
     ]);
-  });
-
-  it("returns a balance of -100.00 when 100.00 withdrawn", () => {
-    const model = new TransactionModel();
-    model.withdraw(100.0);
-
-    expect(model.getBalance()).toEqual(-100.0);
   });
 
   it("reflects in transaction list when withdrawal made", () => {
@@ -72,7 +48,6 @@ describe("TransactionModel", () => {
       {
         date: mockDate,
         credit: 100.0,
-        balance: -100.0,
       },
     ]);
   });
@@ -92,22 +67,18 @@ describe("TransactionModel", () => {
       {
         date: mockDate1,
         debit: 50.0,
-        balance: 50.0,
       },
       {
         date: mockDate2,
         credit: 45.0,
-        balance: 5.0,
       },
       {
         date: mockDate3,
         debit: 40.0,
-        balance: 45.0,
       },
       {
         date: mockDate4,
         credit: 5.55,
-        balance: 39.45,
       },
     ]);
   });
@@ -121,7 +92,6 @@ describe("TransactionModel", () => {
       {
         date: mockDate,
         debit: 50.01,
-        balance: 50.01,
       },
     ]);
   });

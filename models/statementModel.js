@@ -1,18 +1,25 @@
 class StatementModel {
   constructor() {
+    this.balance = 0
     this.header = "date || debit || credit || balance";
   }
 
   debitFormat(transaction) {
-    return transaction.debit === undefined
-      ? ""
-      : this.#poundsPence(transaction.debit);
+    if (transaction.debit === undefined) {
+      return ""
+    } else {
+      this.balance += transaction.debit
+      return this.#poundsPence(transaction.debit)
+    }
   }
 
   creditFormat(transaction) {
-    return transaction.credit === undefined
-      ? ""
-      : this.#poundsPence(transaction.credit);
+    if (transaction.credit === undefined) {
+      return ""
+    } else {
+      this.balance -= transaction.credit
+      return this.#poundsPence(transaction.credit)
+    }
   }
 
   transactionChecker(transactionList) {
@@ -28,7 +35,7 @@ class StatementModel {
       console.log(`${transaction.date} || ${
             this.debitFormat(transaction)} || ${
               this.creditFormat(transaction)} || ${
-                this.#poundsPence(transaction.balance)}`
+                this.#poundsPence(this.balance)}`
       );
     });
   }

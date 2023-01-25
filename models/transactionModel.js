@@ -1,11 +1,6 @@
 class TransactionModel {
   constructor() {
-    this.balance = 0.0;
     this.transactionList = [];
-  }
-
-  getBalance() {
-    return this.balance;
   }
 
   getTransactions() {
@@ -13,12 +8,10 @@ class TransactionModel {
   }
 
   deposit(amount, date) {
-    this.balance += amount;
     this.formatTransactionList("debit", amount, date);
   }
 
   withdraw(amount, date) {
-    this.balance -= amount;
     this.formatTransactionList("credit", amount, date);
   }
 
@@ -26,7 +19,6 @@ class TransactionModel {
     let transactionObj = {};
     transactionObj["date"] = date;
     transactionObj[transactionType] = this.#round(amount);
-    transactionObj["balance"] = this.#round(this.getBalance());
     this.transactionList.push(transactionObj);
   }
 

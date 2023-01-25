@@ -37,11 +37,11 @@ describe("StatementModel", () => {
     const model = new StatementModel();
     let logSpy = jest.spyOn(console, "log");
     const mockTransactions = [
-      { date: "23/01/23", credit: 10.0, balance: 10.0 },
+      { date: "23/01/23", credit: 10.0, balance: -10.0 },
     ];
     model.formatStatement(mockTransactions);
 
-    expect(logSpy).toHaveBeenCalledWith("23/01/23 ||  || 10.00 || 10.00");
+    expect(logSpy).toHaveBeenCalledWith("23/01/23 ||  || 10.00 || -10.00");
   });
 
   it("returns transactions in the correct order", () => {
