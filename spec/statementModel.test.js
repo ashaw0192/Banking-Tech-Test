@@ -5,12 +5,6 @@ describe("StatementModel", () => {
   afterEach(() => {
     logSpy.mockRestore();
   });
-  it("returns amounts to 2.d.p", () => {
-    const model = new StatementModel();
-    const decimal = model.poundsPence(10).split(".")[1];
-
-    expect(decimal.length).toEqual(2);
-  });
 
   it("formats the statement header", () => {
     const model = new StatementModel();

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1674586230788" clover="3.2.0">
-  <project timestamp="1674586230788" name="All files">
-    <metrics statements="44" coveredstatements="44" conditionals="6" coveredconditionals="6" methods="20" coveredmethods="20" elements="70" coveredelements="70" complexity="0" loc="44" ncloc="44" packages="2" files="4" classes="4"/>
+<coverage generated="1674658094261" clover="3.2.0">
+  <project timestamp="1674658094261" name="All files">
+    <metrics statements="44" coveredstatements="44" conditionals="6" coveredconditionals="6" methods="18" coveredmethods="18" elements="68" coveredelements="68" complexity="0" loc="44" ncloc="44" packages="2" files="4" classes="4"/>
     <package name="bankingApp">
       <metrics statements="10" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
       <file name="account.js" path="/Users/anthonyshaw/Projects_Javascript/techTests/bankingApp/account.js">
@@ -19,7 +19,7 @@
       </file>
     </package>
     <package name="bankingApp.models">
-      <metrics statements="34" coveredstatements="34" conditionals="6" coveredconditionals="6" methods="16" coveredmethods="16"/>
+      <metrics statements="34" coveredstatements="34" conditionals="6" coveredconditionals="6" methods="14" coveredmethods="14"/>
       <file name="dateFormatModel.js" path="/Users/anthonyshaw/Projects_Javascript/techTests/bankingApp/models/dateFormatModel.js">
         <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="3" count="1" type="stmt"/>
@@ -31,22 +31,22 @@
         <line num="12" count="2" type="stmt"/>
       </file>
       <file name="statementModel.js" path="/Users/anthonyshaw/Projects_Javascript/techTests/bankingApp/models/statementModel.js">
-        <metrics statements="12" coveredstatements="12" conditionals="6" coveredconditionals="6" methods="8" coveredmethods="8"/>
-        <line num="3" count="6" type="stmt"/>
-        <line num="7" count="9" type="stmt"/>
-        <line num="11" count="4" type="cond" truecount="2" falsecount="0"/>
-        <line num="17" count="4" type="cond" truecount="2" falsecount="0"/>
-        <line num="23" count="5" type="cond" truecount="2" falsecount="0"/>
-        <line num="24" count="2" type="stmt"/>
-        <line num="26" count="3" type="stmt"/>
-        <line num="31" count="3" type="stmt"/>
-        <line num="32" count="4" type="stmt"/>
-        <line num="43" count="5" type="stmt"/>
-        <line num="44" count="5" type="stmt"/>
-        <line num="48" count="2" type="stmt"/>
+        <metrics statements="12" coveredstatements="12" conditionals="6" coveredconditionals="6" methods="7" coveredmethods="7"/>
+        <line num="3" count="5" type="stmt"/>
+        <line num="7" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="13" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="19" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="20" count="2" type="stmt"/>
+        <line num="22" count="3" type="stmt"/>
+        <line num="27" count="3" type="stmt"/>
+        <line num="28" count="4" type="stmt"/>
+        <line num="37" count="5" type="stmt"/>
+        <line num="38" count="5" type="stmt"/>
+        <line num="42" count="8" type="stmt"/>
+        <line num="46" count="2" type="stmt"/>
       </file>
       <file name="transactionModel.js" path="/Users/anthonyshaw/Projects_Javascript/techTests/bankingApp/models/transactionModel.js">
-        <metrics statements="15" coveredstatements="15" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="7"/>
+        <metrics statements="15" coveredstatements="15" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="6"/>
         <line num="3" count="9" type="stmt"/>
         <line num="4" count="9" type="stmt"/>
         <line num="8" count="14" type="stmt"/>
