@@ -10,11 +10,11 @@ class Account {
   }
 
   deposit(amount) {
-    this.transactionModel.deposit(amount, this.dateFormatModel.formatDate());
+    this.transactionModel.formatTransactionList("debit", amount);
   }
 
   withdraw(amount) {
-    this.transactionModel.withdraw(amount, this.dateFormatModel.formatDate());
+    this.transactionModel.formatTransactionList("credit", amount);
   }
 
   statement() {

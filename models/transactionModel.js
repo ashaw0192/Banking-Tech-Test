@@ -7,23 +7,11 @@ class TransactionModel {
     return this.transactionList;
   }
 
-  deposit(amount, date) {
-    this.formatTransactionList("debit", amount, date);
-  }
-
-  withdraw(amount, date) {
-    this.formatTransactionList("credit", amount, date);
-  }
-
-  formatTransactionList(transactionType, amount, date) {
+  formatTransactionList(transactionType, amount) {
     let transactionObj = {};
-    transactionObj["date"] = date;
-    transactionObj[transactionType] = this.#round(amount);
+    transactionObj["date"] = new Date();
+    transactionObj[transactionType] = amount;
     this.transactionList.push(transactionObj);
-  }
-
-  #round(amount) {
-    return parseFloat(amount.toFixed(2));
   }
 }
 
