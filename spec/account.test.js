@@ -28,9 +28,9 @@ describe("Account", () => {
     expect(TransactionModel).toHaveBeenCalledTimes(1);
   });
 
-  it("calls date format model once when a transaction is made", () => {
+  it("calls date format model once when a statement is requested", () => {
     const account = new Account();
-    account.deposit(100.0);
+    account.statement();
 
     expect(DateFormatModel).toHaveBeenCalledTimes(1);
   });

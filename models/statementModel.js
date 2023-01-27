@@ -1,7 +1,10 @@
+const DateFormatModel = require(`../models/dateFormatModel`);
+
 class StatementModel {
   constructor() {
     this.balance = 0
     this.header = "date || debit || credit || balance";
+    this.dateFormatModel = new DateFormatModel();
   }
 
   debitFormat(transaction) {
@@ -32,7 +35,7 @@ class StatementModel {
 
   transactionPrinter(transactionList) {
     transactionList.reverse().forEach((transaction) => {
-      console.log(`${transaction.date} || ${
+      console.log(`${this.dateFormatModel.formatDate(transaction.date)} || ${
             this.debitFormat(transaction)} || ${
               this.creditFormat(transaction)} || ${
                 this.#poundsPence(this.balance)}`
